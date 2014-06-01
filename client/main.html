@@ -10,15 +10,32 @@
 </head>
 <body>
 <header class="container page-header">
-    <h1>Profile picture upload and save <small>Upload, resize, and save profile pictures.</small></h1>
+    <h1>Profile picture upload <small>Upload, resize, and save profile pictures.</small></h1>
 </header>
 <div class="container col-sm-6 col-sm-offset-3">
-    <div class="jumbotron">
-            <h2>Select a profile picture</h2>
-            <form action="">
-                <input class="form-control" type="file" /><br />
-                <button class="btn btn-primary">Upload!</button>
-            </form>
+    {{> profileForm}}
+
+    <div class="row">
+        <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img data-src="holder.js/100%x180" alt="...">
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img data-src="holder.js/100%x180" alt="...">
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img data-src="holder.js/100%x180" alt="...">
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img data-src="holder.js/100%x180" alt="...">
+            </a>
+        </div>
     </div>
 </div>
 </body>
