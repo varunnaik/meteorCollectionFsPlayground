@@ -1,0 +1,28 @@
+<template name="profilePicsDisplay">
+<div id='profile-display' class="row">
+    <h3>Your uploaded pictures</h3>
+    {{#each profileImages}}
+    {{this.url}} {{this.name}}
+    <div class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail">
+            <img src='{{this.url store="profile-picture-original"}}' alt="Original image">
+        </a>
+    </div>
+    <div class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail">
+            <img src='{{this.url store="profile-picture-normal"}}' alt="Profile pic">
+        </a>
+    </div>
+    <div class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail">
+            <img src='{{this.url store="profile-picture-small"}}' alt="Small pic">
+        </a>
+    </div>
+    <div class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail">
+            <img src='{{this.url store="profile-picture-tiny"}}' alt="Tiny pic">
+        </a>
+    </div>
+    {{/each}}
+</div>
+</template>

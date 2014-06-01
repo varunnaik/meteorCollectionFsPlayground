@@ -12,3 +12,7 @@ Template.profileForm.events({
         event.preventDefault();
     }
 });
+
+Template.profilePicsDisplay.profileImages = function() {
+    return ProfilePics.find();
+};
