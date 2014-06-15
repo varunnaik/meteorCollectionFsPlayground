@@ -7,5 +7,5 @@ standard-app-packages
 autopublish
 insecure
 collectionFS
-cfs-filesystem
 cfs-graphicsmagick
+cfs-gridfs
