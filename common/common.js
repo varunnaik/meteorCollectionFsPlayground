@@ -1,8 +1,6 @@
 /**
  * Created by varun on 1/6/14.
  */
-// Note: If potentially sensitive info goes here (such as keys) this should be protected.
-// Images are stored in ../.meteor/local/cfs/files
 
 ProfilePics = new FS.Collection("profile-pictures", {
     stores: [
