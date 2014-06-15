@@ -1,35 +1,10 @@
 /**
  * Created by varun on 1/6/14.
  */
+ProfilePics = ResizeUploadPictures.makeNew("profile-pictures", [
+    {name: "profile-picture-original"},
+    {name: "profile-picture-tiny", width: 23, height: 25},
+    {name: "profile-picture-small", width: 64, height: 72},
+    {name: "profile-picture-normal", width: 171, height: 180},
+]);
 
-ProfilePics = new FS.Collection("profile-pictures", {
-    stores: [
-        new FS.Store.GridFS("profile-picture-original"),
-        new FS.Store.GridFS("profile-picture-tiny", {
-            transformWrite: function(fileObj, readStream, writeStream) {
-                // Transform the image into a 23x25px thumbnail
-                gm(readStream, fileObj.name()).resize('23', '25').stream().pipe(writeStream);
-            }
-        }),
-
-        new FS.Store.GridFS("profile-picture-small", {
-            transformWrite: function(fileObj, readStream, writeStream) {
-                // Transform the image into a 64x72px thumbnail
-                gm(readStream, fileObj.name()).resize('64', '72').stream().pipe(writeStream);
-            }
-        }),
-
-        new FS.Store.GridFS("profile-picture-normal", {
-            transformWrite: function(fileObj, readStream, writeStream) {
-                // Transform the image into a full-size profile picture
-                gm(readStream, fileObj.name()).resize('171', '180').stream().pipe(writeStream);
-            }
-        })
-        // Note: A saved image will have the same name in all the directories above.
-    ],
-    filter: {
-        allow: {
-            contentTypes: ['image/*'] //allow only images in this FS.Collection
-        }
-    }
-});

@@ -14,7 +14,7 @@ ResizeUploadPictures = {
             }
         };
 
-        sizes.forEach(size) (function() {
+        sizes.forEach(function(size) {
 
             if (size.name && size.height && size.width) {
                 connectionParams.stores.push(new FS.Store.GridFS(size.name, {
